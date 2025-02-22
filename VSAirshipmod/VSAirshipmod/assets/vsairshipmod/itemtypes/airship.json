@@ -5,6 +5,13 @@
   "shapeByType": {
     "*": { "base": "entities/air/airship" }
   },
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": [ "aged", "bamboo" ],
+      "loadFromProperties": "block/wood"
+    }
+  ],
   "texturesByType": {
     "*-bamboo": {},
     "*": {

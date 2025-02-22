@@ -1,6 +1,13 @@
 ﻿{
 	"code": "airship",
 	"class": "EntityAirship",
+	"variantgroups": [
+		{
+			"code": "material",
+			"states": [ "aged", "bamboo" ],
+			"loadFromProperties": "block/wood"
+		}
+	],
 	"hitboxSizeByType": {
 		"*": {
 			"x": 3,

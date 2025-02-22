@@ -63,7 +63,7 @@
 			},
 			"groundDragFactor": 1,
 			"airDragFallingFactor": 1.0,
-			"gravityFactor": 1.0
+			"gravityFactor": -0.1
 		},
 		"creaturecarrier": {
 			"__comment": "Note: The FrontSeat selection box originally had that Y-Rotation of 180 degrees - it offseted the player somehow weirdly. Was not able to figure out why. Setting mountRotation works better.",

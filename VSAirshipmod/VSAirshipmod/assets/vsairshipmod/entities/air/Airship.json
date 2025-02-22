@@ -8,6 +8,9 @@
 			"loadFromProperties": "block/wood"
 		}
 	],
+	"skipVariants": [
+		"airship-bamboo"
+	],
 	"hitboxSizeByType": {
 		"*": {
 			"x": 3,
@@ -91,46 +94,6 @@
 			"wearableSlotsByType": {
 				"*": [
 					{
-						"code": "Left Prow Storage",
-						"forCategoryCodes": [ "anchor" ],
-						"attachmentPointCode": "LProwAP",
-						"stepParentTo": {
-							"": { "elementName": "LeftProwStorage" }
-						}
-					},
-					{
-						"code": "Upper Mast Storage",
-						"forCategoryCodes": [ "lantern" ],
-						"attachmentPointCode": "UpperMastAP",
-						"stepParentTo": {
-							"": { "elementName": "UpperMastStorage" }
-						}
-					},
-					{
-						"code": "Figurehead",
-						"forCategoryCodes": [ "chiseledblock" ],
-						"attachmentPointCode": "FigureheadAP",
-						"stepParentTo": {
-							"": { "elementName": "FigureHeadStorage" }
-						}
-					},
-					{
-						"code": "Left Ratlines",
-						"forCategoryCodes": [ "ratlines" ],
-						"attachmentPointCode": "RatlineLAP",
-						"stepParentTo": {
-							"": { "elementName": "RatlineL" }
-						}
-					},
-					{
-						"code": "Right Ratlines",
-						"forCategoryCodes": [ "ratlines" ],
-						"attachmentPointCode": "RatlineRAP",
-						"stepParentTo": {
-							"": { "elementName": "RatlineR" }
-						}
-					},
-					{
 						"code": "Left Storage 1",
 						"forCategoryCodes": [ "seat", "chest", "ropetiepost", "basket", "crate" ],
 						"canMergeWith": [ "Left Storage 2" ],
@@ -207,14 +170,6 @@
 					{
 						"code": "RightSeatAP",
 						"forCategoryCodes": []
-					},
-					{
-						"code": "Lower Mast Storage",
-						"forCategoryCodes": [ "rope" ],
-						"attachmentPointCode": "LowerMastAP",
-						"stepParentTo": {
-							"": { "elementName": "LowerMastStorage" }
-						}
 					}
 				]
 			}
@@ -222,7 +177,7 @@
 		"selectionboxes": {
 			"__comment": "Modders, make sure the selectionBoxes are in the same order as the wearableSlots, or things can go haywire. Placed chest contents dont get synced properly for example, if wrongly ordered.",
 			"selectionBoxesByType": {
-				"*": [ "LProwAP", "UpperMastAP", "FigureheadAP", "RatlineLAP", "RatlineRAP", "LStore1AP", "LStore2AP", "LStore3AP", "LStore4AP", "RStore1AP", "RStore2AP", "RStore3AP", "RStore4AP", "LeftSeatAP", "RightSeatAP", "LowerMastAP" ]
+				"*": [ "LStore1AP", "LStore2AP", "LStore3AP", "LStore4AP", "RStore1AP", "RStore2AP", "RStore3AP", "RStore4AP", "LeftSeatAP", "RightSeatAP" ]
 			}
 		}
 	},
@@ -284,9 +239,6 @@
 		},
 		"swimmingOffsetYByType": {
 			"*": 1
-		},
-		"unfurlSailsByType": {
-			"*": true
 		},
 		"mountAnimationsByType": {
 			"*": {
@@ -363,7 +315,9 @@
 					"*": true
 				}
 			},
-			{ "code": "selectionboxes" }
+			{ "code": "selectionboxes" },
+			{ "code": "rideableaccessories" },
+			{ "code": "creaturecarrier" }
 		]
 	},
 
@@ -385,7 +339,9 @@
 				}
 			},
 			{ "code": "passivephysicsmultibox" },
-			{ "code": "selectionboxes" }
+			{ "code": "selectionboxes" },
+			{ "code": "rideableaccessories" },
+			{ "code": "creaturecarrier" }
 		]
 	},
 

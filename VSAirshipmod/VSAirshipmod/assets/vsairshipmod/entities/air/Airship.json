@@ -315,9 +315,7 @@
 					"*": true
 				}
 			},
-			{ "code": "selectionboxes" },
-			{ "code": "rideableaccessories" },
-			{ "code": "creaturecarrier" }
+			{ "code": "selectionboxes" }
 		]
 	},
 
@@ -339,9 +337,7 @@
 				}
 			},
 			{ "code": "passivephysicsmultibox" },
-			{ "code": "selectionboxes" },
-			{ "code": "rideableaccessories" },
-			{ "code": "creaturecarrier" }
+			{ "code": "selectionboxes" }
 		]
 	},
 

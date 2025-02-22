@@ -1,137 +1,21 @@
 ﻿{
 	"code": "airship",
 	"class": "EntityAirship",
-	"hitboxSizeByType":{
-			"x": 3,
-			"y": 1.2,
-			"z": 3
-		},
-
-	"passivephysicsmultibox": {
-		"collisionBoxesByType": {
-			"boat-raft-*": [
-				{
-					"x1": -0.75,
-					"y1": 0,
-					"z1": 0,
-					"x2": 0.75,
-					"y2": 0.6,
-					"z2": 1.5
-				},
-				{
-					"x1": -0.75,
-					"y1": 0,
-					"z1": -1.5,
-					"x2": 0.75,
-					"y2": 0.6,
-					"z2": 0
-				}
-			],
-			"*": [
-				{
-					"x1": -1.4,
-					"y1": 0,
-					"z1": 0.1,
-					"x2": 1.4,
-					"y2": 1.2,
-					"z2": 2.9
-				},
-				{
-					"x1": -1.4,
-					"y1": 0,
-					"z1": -2.9,
-					"x2": 1.4,
-					"y2": 1.2,
-					"z2": -0.1
-				},
-				{
-					"x1": -1.4,
-					"y1": 0,
-					"z1": -5.9,
-					"x2": 1.4,
-					"y2": 1.2,
-					"z2": -2.9
-				}
-			]
-		},
-		"groundDragFactor": 1,
-		"airDragFallingFactor": 0.5,
-		"gravityFactor": 1.0
+	"hitboxSize": {
+		"x": 3,
+		"y": 1.2
 	},
 	"client": {
-		"size": 1,
 		"renderer": "Shape",
-		"shapeByType": { "base": "entities/air/airshipModel", "ignoreElements": [ "hideWater" ] },
-		"animations": [
-			{
-				"code": "turnLeft",
-				"animation": "turnLeft",
-				"animationSpeed": 1,
-				"easeInSpeed": 2,
-				"easeOutSpeed": 2
-			},
-			{
-				"code": "turnRight",
-				"animation": "turnRight",
-				"animationSpeed": 1,
-				"easeInSpeed": 2,
-				"easeOutSpeed": 2
-			}
-		],
-		"texturesByType": {
-				"material": { "base": "game:block/wood/debarked/{material}" },
-				"oak": { "base": "game:block/wood/debarked/{material}" },
-				"oak1": { "base": "game:block/wood/planks/{material}*" },
-				"birch1": { "base": "game:block/wood/planks/{material}*" },
-				"plainoak": { "base": "game:block/wood/debarked/{material}" }
-		},
+		"shape": { "base": "entities/air/airshipModel" },
+		"texture": { "base": "game:block/wood/debarked/oak" },
 		"behaviors": [
-			{
-				"code": "ellipsoidalrepulseagents",
-				"enabledByType": {"airship-*": true}
-			},
-			{
-				"code": "repulseagents",
-				"enabledByType": {
-					"airship-*": false,
-					"*": true
-				}
-			},
-			{ "code": "passivephysicsmultibox" },
-			{ "code": "interpolateposition" },
-			{
-				"code": "hidewatersurface",
-				"hideWaterElement": "ORIGIN/hideWater/*",
-				"enabledByType": {
-					"airship-*": true,
-					"*": false
-				}
-			},
-			{ "code": "selectionboxes" },
-			{ "code": "rideableaccessories" },
-			{ "code": "creaturecarrier" }
+			{ "code": "interpolateposition" }
 		]
 	},
 	"server": {
 		"behaviors": [
-			{
-				"code": "ellipsoidalrepulseagents",
-				"enabledByType": {
-					"airship-*": true,
-					"*": false
-				}
-			},
-			{
-				"code": "repulseagents",
-				"enabledByType": {
-					"airship-*": false,
-					"*": true
-				}
-			},
-			{ "code": "passivephysicsmultibox" },
-			{ "code": "selectionboxes" },
-			{ "code": "rideableaccessories" },
-			{ "code": "creaturecarrier" }
+			{ "code": "repulseagents" }
 		]
 	},
 	"sounds": {}

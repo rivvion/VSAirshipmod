@@ -264,17 +264,17 @@
 				{
 					"type": "block",
 					"code": "supportbeam-{material}",
-					"quantity": 100
+					"quantity": 1
 				},
 				{
 					"type": "item",
 					"code": "rope",
-					"quantity": 100
+					"quantity": 1
 				},
 				{
 					"type": "block",
 					"code": "linen-normal-down",
-					"quantity": 150
+					"quantity": 1
 				}
 			]
 		},

@@ -1,5 +1,5 @@
 ﻿{
-	"code": "VSAirshipmod",
+	"code": "airship",
 	"class": "EntityAirship",
 	"variantgroups": [
 		{
@@ -17,7 +17,7 @@
 		"size": 1,
 		"renderer": "Shape",
 		"shapeByType": {
-			"*": { "base": "VSAirshipmod" }
+			"*": { "base": "airship" }
 		},
 		"texturesByType": {
 			"*-aged": {

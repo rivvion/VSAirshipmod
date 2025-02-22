@@ -9,13 +9,13 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"plain": "block/cloth/linen/plain",
-		"iron1": "block/metal/sheet-plain/iron1",
-		"oak": "block/wood/debarked/oak",
-		"plainoak": "block/wood/plainoak",
-		"birch1": "block/wood/planks/birch1",
-		"oak1": "block/wood/planks/oak1",
-		"rope": "item/resource/rope"
+		"plain": "game:block/cloth/linen/plain",
+		"iron1": "game:block/metal/sheet-plain/iron1",
+		"oak": "game:block/wood/debarked/oak",
+		"plainoak": "game:block/wood/plainoak",
+		"birch1": "game:block/wood/planks/birch1",
+		"oak1": "game:block/wood/planks/oak1",
+		"rope": "game:item/resource/rope"
 	},
 	"elements": [
 		{

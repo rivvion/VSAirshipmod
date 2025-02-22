@@ -280,7 +280,7 @@
 		shapeByType: {
 			"*-bamboo": { base: "entity/water/boat/raft-bamboo" },
 			"boat-raft-*": { base: "entity/water/boat/raft" },
-			"boat-sailed-*": { base: "sailed", ignoreElements: ["hideWater"] }
+			"boat-sailed-*": { base: "entity/sailed", ignoreElements: ["hideWater"] }
 		},
 		animations: [
 			{

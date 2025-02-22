@@ -262,7 +262,7 @@
 		"renderer": "Shape",
 		"shapeByType": {
 			"*": {
-				"base": "entity/airshipmodel",
+				"base": "entity/airshipmodel2",
 				"ignoreElements": [ "hideWater" ]
 			}
 		},

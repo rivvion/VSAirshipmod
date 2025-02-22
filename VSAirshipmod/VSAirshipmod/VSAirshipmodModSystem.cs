@@ -3,24 +3,33 @@ using Vintagestory.API.Server;
 using Vintagestory.API.Config;
 using Vintagestory.API.Common;
 
-namespace VSAirshipmod;
-
-public class VSAirshipmodModSystem : ModSystem
+namespace VSAirshipmod
 {
-    // Called on server and client
-    // Useful for registering block/entity classes on both sides
-    public override void Start(ICoreAPI api)
+    public class VSAirshipmodModSystem : ModSystem
     {
-        Mod.Logger.Notification("Hello from template mod: " + api.Side);
-    }
+        // Called on server and client
+        // Useful for registering block/entity classes on both sides
+        public override void Start(ICoreAPI api)
+        {
+            Test();
+            Mod.Logger.Notification("Hello from template mod: " + api.Side);
+        }
 
-    public override void StartServerSide(ICoreServerAPI api)
-    {
-        Mod.Logger.Notification("Hello from template mod server side: " + Lang.Get("vsairshipmod:hello"));
-    }
+        public override void StartServerSide(ICoreServerAPI api)
+        {
+            Mod.Logger.Notification("Hello from template mod server side: " + Lang.Get("vsairshipmod:hello"));
+        }
 
-    public override void StartClientSide(ICoreClientAPI api)
-    {
-        Mod.Logger.Notification("Hello from template mod client side: " + Lang.Get("vsairshipmod:hello"));
+        public override void StartClientSide(ICoreClientAPI api)
+        {
+            Mod.Logger.Notification("Hello from template mod client side: " + Lang.Get("vsairshipmod:hello"));
+        }
+
+        public void Test()
+        {
+            Mod.Logger.Notification("Hello There... General Kenobi");
+        }
     }
 }
+
+

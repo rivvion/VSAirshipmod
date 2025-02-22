@@ -1,14 +1,30 @@
 ﻿{
 	"code": "airship",
 	"class": "EntityAirship",
-	"hitboxSize": {
-		"x": 3,
-		"y": 1.2
+	"hitboxSizeByType": {
+		"*": {
+			"x": 3,
+			"y": 1.2,
+			"z": 3
+		}
 	},
 	"client": {
 		"renderer": "Shape",
-		"shape": { "base": "entity/airshipmodel" },
-		"texture": { "base": "game:block/wood/debarked/oak" },
+		"shapeByType": {
+			"*": {
+				"base": "entity/airshipmodel",
+				"ignoreElements": [ "hideWater" ]
+			}
+		},
+		"texturesByType": {
+			"*": {
+				"material": { "base": "game:block/wood/debarked/{material}" },
+				"oak": { "base": "game:block/wood/debarked/{material}" },
+				"oak1": { "base": "game:block/wood/planks/{material}*" },
+				"birch1": { "base": "game:block/wood/planks/{material}*" },
+				"plainoak": { "base": "game:block/wood/debarked/{material}" }
+			}
+		},
 		"behaviors": [
 			{ "code": "interpolateposition" }
 		]

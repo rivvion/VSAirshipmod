@@ -25,7 +25,7 @@
   },
   "attributes": {
     "handbook": {
-      "groupBy": [ "boat-{type}-*" ]
+      "groupBy": [ "airship-{type}-*" ]
     }
   },
   "heldTpIdleAnimation": "holdunderarm",

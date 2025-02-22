@@ -7,7 +7,7 @@
 	},
 	"client": {
 		"renderer": "Shape",
-		"shape": { "base": "entities/air/airshipModel" },
+		"shape": { "base": "air/airshipmodel" },
 		"texture": { "base": "game:block/wood/debarked/oak" },
 		"behaviors": [
 			{ "code": "interpolateposition" }

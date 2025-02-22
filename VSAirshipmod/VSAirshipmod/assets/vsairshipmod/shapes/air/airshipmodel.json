@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/ORIGIN/MastORIGIN,Root/ORIGIN/MastORIGIN/Mast1/Mast2/Mast3/Mast4/Mast5/Mast6/SparORIGIN/SparR1,Root/ORIGIN/ORIGIN-Section2,Root/ORIGIN/ORIGIN-Section2/GunwhaleS3,Root/ORIGIN/ORIGIN-Prow2/GunwhaleN4,Root/ORIGIN/ORIGIN-Section1,Root/ORIGIN/ORIGIN-Prow2/TillerORIGIN,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN/HalyardRearL1,Root/ORIGIN/ORIGIN-Section2/GunwhaleN3,Root/ORIGIN/ORIGIN-Prow2/ProwFloorN5,Root/ORIGIN/MastORIGIN/Mast1/Mast2/ORIGINcleat,Root/ORIGIN/ORIGIN-Section2/FloorN2,Root/ORIGIN/ORIGIN-Prow2/ProwFloorS6,Root/ORIGIN/ORIGIN-Prow2,Root/ORIGIN/ORIGIN-Prow2/ProwFloorS6/ProwFloorS7/ProwFloorS8,Root/ORIGIN/ORIGIN-Prow2/GunwhaleS4/HullUpperS4,Root/ORIGIN/ORIGIN-Prow2/GunwhaleS4/GunwhaleSTaper6,Root/ORIGIN/ORIGIN-Prow2/GunwhaleS4/Cube6,Root/ORIGIN/MastORIGIN/Mast1/Mast2/Mast3/Mast4/Mast5/Mast6/SparORIGIN/SparL1,Root/ORIGIN/ORIGIN-Prow,Root/ORIGIN/ORIGIN-Section2/FloorS2,Root/ORIGIN/ORIGIN-Prow2/ProwBeam7",
+		"collapsedPaths": "Root/ORIGIN/MastORIGIN,Root/ORIGIN/MastORIGIN/Mast1/Mast2/Mast3/Mast4/Mast5/Mast6/SparORIGIN/SparR1,Root/ORIGIN/ORIGIN-Section2,Root/ORIGIN/hideWater/hideWater-upper,Root/ORIGIN/hideWater,Root/ORIGIN/ORIGIN-Section2/GunwhaleS3,Root/ORIGIN/ORIGIN-Prow2/GunwhaleN4,Root/ORIGIN/ORIGIN-Section1,Root/ORIGIN/ORIGIN-Prow2/TillerORIGIN,Root/ORIGIN/ORIGIN-Section2/GunwhaleN3,Root/ORIGIN/ORIGIN-Prow2/ProwFloorN5,Root/ORIGIN/MastORIGIN/Mast1/Mast2/ORIGINcleat,Root/ORIGIN/ORIGIN-Section2/FloorN2,Root/ORIGIN/ORIGIN-Prow2/ProwFloorS6,Root/ORIGIN/ORIGIN-Prow2/ProwFloorS6/ProwFloorS7/ProwFloorS8,Root/ORIGIN/ORIGIN-Prow2/GunwhaleS4/HullUpperS4,Root/ORIGIN/ORIGIN-Prow2/GunwhaleS4/GunwhaleSTaper6,Root/ORIGIN/ORIGIN-Prow2/GunwhaleS4/Cube6,Root/ORIGIN/MastORIGIN/Mast1/Mast2/Mast3/Mast4/Mast5/Mast6/SparORIGIN/SparL1,Root/ORIGIN/ORIGIN-Prow,Root/ORIGIN/ORIGIN-Section2/FloorS2,Root/ORIGIN/ORIGIN-Prow2/ProwBeam7",
 		"allAngles": true,
 		"entityTextureMode": false
 	},
@@ -4116,20 +4116,18 @@
 						},
 						{
 							"name": "HalyardORIGIN",
-							"from": [ 12.0, 17.9, 0.0 ],
-							"to": [ 14.0, 19.9, 2.0 ],
-							"renderInEditor": false,
+							"from": [ 12.25, 17.9, 0.0 ],
+							"to": [ 14.25, 19.9, 2.0 ],
 							"rotationOrigin": [ 12.0, 17.9, 0.0 ],
-							"rotationZ": 38.0,
 							"faces": {
 							},
 							"children": [
 								{
 									"name": "HalyardRearL1",
-									"from": [ 1.0, 0.1, 19.8 ],
-									"to": [ 2.0, 16.1, 20.8 ],
-									"rotationOrigin": [ 1.5, 0.1, 20.3 ],
-									"rotationX": -23.5,
+									"from": [ 1.75, 1.1, 19.6 ],
+									"to": [ 2.75, 17.1, 20.6 ],
+									"rotationOrigin": [ 2.5, 1.1, 20.3 ],
+									"rotationX": 10.0,
 									"faces": {
 										"north": { "texture": "#rope", "uv": [ 3.0, 0.0, 4.0, 16.0 ] },
 										"east": { "texture": "#rope", "uv": [ 2.0, 0.0, 3.0, 16.0 ] },
@@ -4167,10 +4165,10 @@
 								},
 								{
 									"name": "HalyardRearR1",
-									"from": [ 1.0, 0.1, -19.8 ],
-									"to": [ 2.0, 16.1, -18.8 ],
-									"rotationOrigin": [ 1.5, 0.1, -19.3 ],
-									"rotationX": 23.5,
+									"from": [ 1.75, 1.1, -18.6 ],
+									"to": [ 2.75, 17.1, -17.6 ],
+									"rotationOrigin": [ 1.5, 1.1, -18.3 ],
+									"rotationX": -10.0,
 									"faces": {
 										"north": { "texture": "#rope", "uv": [ 3.0, 0.0, 4.0, 16.0 ] },
 										"east": { "texture": "#rope", "uv": [ 2.0, 0.0, 3.0, 16.0 ] },
@@ -4210,6 +4208,7 @@
 									"name": "halyard1",
 									"from": [ 1.0, 45.0, 0.0 ],
 									"to": [ 2.0, 61.0, 1.0 ],
+									"renderInEditor": false,
 									"rotationOrigin": [ 1.0, 45.0, 0.0 ],
 									"faces": {
 										"north": { "texture": "#rope", "uv": [ 1.0, 0.0, 2.0, 16.0 ] },
@@ -4279,7 +4278,6 @@
 									"from": [ 0.3, -0.4, -20.6 ],
 									"to": [ 4.3, 1.6, -17.6 ],
 									"rotationOrigin": [ 0.3, -0.4, -20.6 ],
-									"rotationZ": -39.0,
 									"faces": {
 										"north": { "texture": "#rope", "uv": [ 0.0, 0.0, 4.0, 2.0 ] },
 										"east": { "texture": "#rope", "uv": [ 0.0, 1.0, 3.0, 3.0 ] },
@@ -4294,7 +4292,6 @@
 									"from": [ 0.3, -0.4, 19.6 ],
 									"to": [ 4.3, 1.6, 22.6 ],
 									"rotationOrigin": [ 0.3, -0.4, 19.6 ],
-									"rotationZ": -39.0,
 									"faces": {
 										"north": { "texture": "#rope", "uv": [ 0.0, 0.0, 4.0, 2.0 ] },
 										"east": { "texture": "#rope", "uv": [ 0.0, 1.0, 3.0, 3.0 ] },

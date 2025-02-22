@@ -62,7 +62,7 @@
 				]
 			},
 			"groundDragFactor": 1,
-			"airDragFallingFactor": 0.5,
+			"airDragFallingFactor": 1.0,
 			"gravityFactor": 1.0
 		},
 		"creaturecarrier": {
@@ -239,48 +239,48 @@
 				{
 					"type": "item",
 					"code": "plank-{material}",
-					"quantity": 32
+					"quantity": 1
 				},
 				{
 					"type": "item",
 					"code": "plank-{material}",
-					"quantity": 32
+					"quantity": 2
 				},
 				{
 					"type": "item",
 					"code": "plank-{material}",
-					"quantity": 32
+					"quantity": 3
 				},
 				{
 					"type": "item",
 					"code": "plank-{material}",
-					"quantity": 32
+					"quantity": 4
 				},
 				{
 					"type": "item",
 					"code": "plank-{material}",
-					"quantity": 16
+					"quantity": 5
 				},
 				{
 					"type": "block",
 					"code": "supportbeam-{material}",
-					"quantity": 22
+					"quantity": 100
 				},
 				{
 					"type": "item",
 					"code": "rope",
-					"quantity": 13
+					"quantity": 100
 				},
 				{
 					"type": "block",
 					"code": "linen-normal-down",
-					"quantity": 15
+					"quantity": 150
 				}
 			]
 		},
 		"shouldSwivelFromMotion": false,
 		"speedMultiplierByType": {
-			"*": 1.2
+			"*": 10.2
 		},
 		"swimmingOffsetYByType": {
 			"*": 1
@@ -363,7 +363,8 @@
 					"*": true
 				}
 			},
-			{ "code": "selectionboxes" }
+			{ "code": "selectionboxes" },
+			{ "code": "creaturecarrier" }
 		]
 	},
 
@@ -385,7 +386,8 @@
 				}
 			},
 			{ "code": "passivephysicsmultibox" },
-			{ "code": "selectionboxes" }
+			{ "code": "selectionboxes" },
+			{ "code": "creaturecarrier" }
 		]
 	},
 

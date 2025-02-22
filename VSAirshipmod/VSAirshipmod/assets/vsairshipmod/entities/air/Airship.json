@@ -364,7 +364,6 @@
 				}
 			},
 			{ "code": "selectionboxes" },
-			{ "code": "creaturecarrier" }
 		]
 	},
 
@@ -386,8 +385,7 @@
 				}
 			},
 			{ "code": "passivephysicsmultibox" },
-			{ "code": "selectionboxes" },
-			{ "code": "creaturecarrier" }
+			{ "code": "selectionboxes" }
 		]
 	},
 

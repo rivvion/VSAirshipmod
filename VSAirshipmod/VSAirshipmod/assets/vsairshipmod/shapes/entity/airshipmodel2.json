@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/ORIGIN/ORIGIN-Prow2/GunwhaleS4/GunwhaleSTaper6,Root/BALLOON LONGPOINT 1/PIVOT,Root/ORIGIN/BALLOON LONGPOINT 1,Root/ORIGIN/ORIGIN-Section2/GunwhaleN3,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN/HalyardRearL1,Root/ORIGIN/ORIGIN-Prow2/ProwFloorS6/ProwFloorS7/ProwFloorS8,Root/ORIGIN/ORIGIN-Prow2/GunwhaleS4,Root/ORIGIN/ORIGIN-Prow2/ProwFloorS6,Root/ORIGIN/ORIGIN-Section2/GunwhaleS3,Root/ORIGIN/hideWater,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN2/halyard9,Root/ORIGIN/MastORIGIN/Mast1/Mast2/Mast3/Mast4/Mast5/Mast6/SparORIGIN/SparR1,Root/ORIGIN/ORIGIN-Prow2/GunwhaleS4/HullUpperS4,Root/ORIGIN2/ORIGIN-Section4,Root/ORIGIN2/ORIGIN-Section3,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN/HalyardRearL1/halyard25,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN/halyard5,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN/halyard1,Root/ORIGIN/ORIGIN-Prow2/ProwFloorN5,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN2,Root/ORIGIN/ORIGIN-Prow2,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN2/HalyardRearL5,Root/ORIGIN/ORIGIN-Section2/FloorS2,Root/BALLOON LONGPOINT 1/PIVOT4/LP LINE 8 -28,Root/ORIGIN2/hideWater27,Root/ORIGIN/ORIGIN-Prow2/TillerORIGIN,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN/HalyardRearL1/halyard1,Root/ORIGIN/MastORIGIN/Mast1/Mast2/ORIGINcleat,Root/ORIGIN/ORIGIN-Prow2/GunwhaleS4/Cube6,Root/ORIGIN/ORIGIN-Prow,Root/ORIGIN/ORIGIN-Section2,Root/ORIGIN/ORIGIN-Section1,Root/ORIGIN/hideWater/hideWater-upper,Root/ORIGIN/ORIGIN-Section2/FloorN2,Root/ORIGIN/MastORIGIN/Mast1/Mast2/Mast3/Mast4/Mast5/Mast6/SparORIGIN/SparL1,Root/ORIGIN/ORIGIN-Prow2/ProwBeam7,Root/ORIGIN/MastORIGIN,Root/ORIGIN/ORIGIN-Prow2/GunwhaleN4,Root/ORIGIN2/ORIGIN-Prow4,Root/ORIGIN2/ORIGIN-Prow3,Root/BALLOON LONGPOINT 1/PIVOT2,Root/BALLOON LONGPOINT 1/PIVOT4,Root/BALLOON LONGPOINT 1/PIVOT5,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN2/HalyardRearR5/HalyardRearR6/HalyardRearR8/halyard13",
+		"collapsedPaths": "Root/ORIGIN/ORIGIN-Section2,Root/ORIGIN/ORIGIN-Section2/GunwhaleS3,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN/halyard5,Root/ORIGIN/ORIGIN-Section1,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN/halyard1,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN2,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN2/HalyardRearL5,Root/ORIGIN/ORIGIN-Prow2/GunwhaleS4/GunwhaleSTaper6,Root/ORIGIN/ORIGIN-Section2/FloorS2,Root/BALLOON LONGPOINT 1/PIVOT,Root/ORIGIN/hideWater/hideWater-upper,Root/ORIGIN/BALLOON LONGPOINT 1,Root/BALLOON LONGPOINT 1/PIVOT4/LP LINE 8 -28,Root/ORIGIN2/hideWater27,Root/ORIGIN/ORIGIN-Prow2/TillerORIGIN,Root/ORIGIN/ORIGIN-Section2/GunwhaleN3,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN/HalyardRearL1,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN,Root/ORIGIN/ORIGIN-Section2/FloorN2,Root/ORIGIN/ORIGIN-Prow2/ProwFloorS6/ProwFloorS7/ProwFloorS8,Root/ORIGIN/MastORIGIN/Mast1/Mast2/Mast3/Mast4/Mast5/Mast6/SparORIGIN/SparL1,Root/ORIGIN/ORIGIN-Prow2/ProwBeam7,Root/ORIGIN/MastORIGIN,Root/ORIGIN/hideWater,Root/ORIGIN/ORIGIN-Prow2/GunwhaleN4,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN2/halyard9,Root/ORIGIN/ORIGIN-Prow2/GunwhaleS4,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN/HalyardRearL1/halyard1,Root/ORIGIN/MastORIGIN/Mast1/Mast2/Mast3/Mast4/Mast5/Mast6/SparORIGIN/SparR1,Root/ORIGIN2/ORIGIN-Prow4,Root/ORIGIN2/ORIGIN-Prow3,Root/ORIGIN/MastORIGIN/Mast1/Mast2/ORIGINcleat,Root/ORIGIN/ORIGIN-Prow2/ProwFloorS6,Root/BALLOON LONGPOINT 1/PIVOT2,Root/BALLOON LONGPOINT 1/PIVOT4,Root/BALLOON LONGPOINT 1/PIVOT5,Root/ORIGIN/ORIGIN-Prow2/GunwhaleS4/HullUpperS4,Root/ORIGIN2/ORIGIN-Section4,Root/ORIGIN2/ORIGIN-Section3,Root/ORIGIN/ORIGIN-Prow2/GunwhaleS4/Cube6,Root/ORIGIN/ORIGIN-Prow,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN2/HalyardRearR5/HalyardRearR6/HalyardRearR8/halyard13,Root/ORIGIN/ORIGIN-Prow2/HalyardORIGIN/HalyardRearL1/halyard25",
 		"allAngles": true,
 		"entityTextureMode": false
 	},
@@ -9,13 +9,6 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"plain": "game:block/cloth/linen/plain",
-		"iron1": "game:block/metal/sheet-plain/iron1",
-		"oak": "game:block/wood/debarked/oak",
-		"plainoak": "game:block/wood/plainoak",
-		"birch1": "game:block/wood/planks/birch1",
-		"oak1": "game:block/wood/planks/oak1",
-		"rope": "game:item/resource/rope"
 	},
 	"elements": [
 		{
@@ -29,10 +22,9 @@
 			"children": [
 				{
 					"name": "BALLOON LONGPOINT 1",
-					"from": [ 0.0, 0.0, 1.0 ],
-					"to": [ 12.0, 12.0, 13.0 ],
-					"rotationOrigin": [ 0.0, 0.0, 1.0 ],
-					"rotationY": 0.0,
+					"from": [ 0.0, 12.0, 1.0 ],
+					"to": [ 12.0, 24.0, 13.0 ],
+					"rotationOrigin": [ 0.0, 12.0, 1.0 ],
 					"faces": {
 					},
 					"children": [
@@ -7692,7 +7684,6 @@
 					"to": [ -15.0, -123.9, 3.0 ],
 					"rotationOrigin": [ -16.0, -124.9, 2.0 ],
 					"rotationX": -180.0,
-					"rotationY": 0.0,
 					"rotationZ": -180.0,
 					"faces": {
 						"north": { "texture": "#oak1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
@@ -8929,8 +8920,6 @@
 											"from": [ 0.0, 64.0, 0.0 ],
 											"to": [ 1.0, 80.0, 1.0 ],
 											"rotationOrigin": [ 0.25, 63.9951, -0.0058 ],
-											"rotationY": 0.0,
-											"rotationZ": 0.0,
 											"faces": {
 												"north": { "texture": "#rope", "uv": [ 1.0, 0.0, 2.0, 16.0 ] },
 												"east": { "texture": "#rope", "uv": [ 0.0, 0.0, 1.0, 16.0 ] },
@@ -9013,8 +9002,6 @@
 											"from": [ 0.0, 64.0, 0.0 ],
 											"to": [ 1.0, 80.0, 1.0 ],
 											"rotationOrigin": [ 0.0, 64.0, 0.0 ],
-											"rotationY": 0.0,
-											"rotationZ": 0.0,
 											"faces": {
 												"north": { "texture": "#rope", "uv": [ 1.0, 0.0, 2.0, 16.0 ] },
 												"east": { "texture": "#rope", "uv": [ 0.0, 0.0, 1.0, 16.0 ] },
@@ -9135,8 +9122,6 @@
 											"from": [ 0.0, 64.0, 0.1287 ],
 											"to": [ 1.0, 80.0, 1.1287 ],
 											"rotationOrigin": [ 0.25, 64.0027, 1.1287 ],
-											"rotationY": 0.0,
-											"rotationZ": 0.0,
 											"faces": {
 												"north": { "texture": "#rope", "uv": [ 1.0, 0.0, 2.0, 16.0 ] },
 												"east": { "texture": "#rope", "uv": [ 0.0, 0.0, 1.0, 16.0 ] },
@@ -9217,8 +9202,6 @@
 													"from": [ 0.0, 48.0, 0.0 ],
 													"to": [ 1.0, 64.0, 1.0 ],
 													"rotationOrigin": [ 0.0, 48.0, 0.0 ],
-													"rotationY": 0.0,
-													"rotationZ": 0.0,
 													"faces": {
 														"north": { "texture": "#rope", "uv": [ 1.0, 0.0, 2.0, 16.0 ] },
 														"east": { "texture": "#rope", "uv": [ 0.0, 0.0, 1.0, 16.0 ] },
@@ -9282,6 +9265,7 @@
 					"name": "hideWater",
 					"from": [ -36.0, -113.0, -19.0 ],
 					"to": [ 37.0, -113.0, 21.0 ],
+					"renderInEditor": false,
 					"rotationOrigin": [ 14.0, -113.0, -19.0 ],
 					"faces": {
 						"up": { "texture": "#null", "uv": [ 0.0, 0.0, 73.0, 40.0 ], "windMode": [-1,-1,-1,-1] }

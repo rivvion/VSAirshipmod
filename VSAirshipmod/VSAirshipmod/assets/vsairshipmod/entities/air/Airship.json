@@ -1,6 +1,6 @@
 ﻿{
 	"code": "airship",
-	"class": "EntityBoat", //EntityAirship
+	"class": "EntityAirship", //"EntityBoat", //
 	"variantgroups": [
 		{
 			"code": "material",
@@ -11,8 +11,6 @@
 	"skipVariants": [
 		"airship-bamboo"
 	],
-
-
 
 
 	"hitboxSizeByType": {

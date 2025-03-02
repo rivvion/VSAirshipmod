@@ -1,6 +1,6 @@
 ﻿{
 	"code": "airship",
-	"class": "EntityAirship",
+	"class": "EntityBoat",
 	"variantgroups": [
 		{
 			"code": "material",
@@ -11,6 +11,10 @@
 	"skipVariants": [
 		"airship-bamboo"
 	],
+
+
+
+
 	"hitboxSizeByType": {
 		"*": {
 			"x": 3,
@@ -18,105 +22,6 @@
 			"z": 3
 		}
 	},
-
-
-	"behaviorConfigs": {
-		"ellipsoidalrepulseagentsByType": {
-			"*": {
-				"offset": {
-					"x": 0.1,
-					"z": 1.5
-				},
-				"__comment": "Not a 3d Ellipse but essentially a 2d ellipse lengthened in the y-axis",
-				"radius": {
-					"x": 1.9,
-					"y": 1.5,
-					"z": 4.6
-				}
-			}
-		},
-		"passivephysicsmultibox": {
-			"collisionBoxesByType": {
-				"*": [
-					{
-						"x1": -1.4,
-						"y1": 0,
-						"z1": 0.1,
-						"x2": 1.4,
-						"y2": 1.2,
-						"z2": 2.9
-					},
-					{
-						"x1": -1.4,
-						"y1": 0,
-						"z1": -2.9,
-						"x2": 1.4,
-						"y2": 1.2,
-						"z2": -0.1
-					},
-					{
-						"x1": -1.4,
-						"y1": 0,
-						"z1": -5.9,
-						"x2": 1.4,
-						"y2": 1.2,
-						"z2": -2.9
-					}
-				]
-			},
-			"groundDragFactor": 1,
-			"airDragFallingFactor": 1.0,
-			"gravityFactor": -0.1
-		},
-		"creaturecarrier": {
-			"__comment": "Note: The FrontSeat selection box originally had that Y-Rotation of 180 degrees - it offseted the player somehow weirdly. Was not able to figure out why. Setting mountRotation works better.",
-			"seatsByType": {
-				"*": [
-					{
-						"apName": "LeftSeat",
-						"mountOffset": { "x": 0.5 },
-						"bodyYawLimit": 0.4,
-						"eyeHeight": 1
-					},
-					{
-						"apName": "RightSeat",
-						"mountOffset": { "x": 0.5 },
-						"bodyYawLimit": 0.4,
-						"controllable": true,
-						"eyeHeight": 1
-					}
-				]
-			}
-		},
-		"rideableaccessories": {
-			"dropContentsOnDeath": true,
-			"__comment": "These need to be in the same order as the selectionBoxes array further down",
-			"wearableSlotsByType": {
-				"*": [
-
-					{
-						"code": "LeftSeat",
-						"forCategoryCodes": []
-					},
-					{
-						"code": "RightSeat",
-						"forCategoryCodes": []
-					}
-				]
-			}
-		},
-		"selectionboxes": {
-			"__comment": "Modders, make sure the selectionBoxes are in the same order as the wearableSlots, or things can go haywire. Placed chest contents dont get synced properly for example, if wrongly ordered.",
-			"selectionBoxesByType": {
-				"*": [ "LeftSeat", "RightSeat" ]
-			}
-		}
-	},
-
-
-
-
-
 
 	"attributes": {
 		"deconstructible": true,
@@ -183,6 +88,121 @@
 
 
 
+	"behaviorConfigs": {
+		//"ellipsoidalrepulseagentsByType": {
+		//	"*": {
+		//		"offset": {
+		//			"x": 0.1,
+		//			"z": 1.5
+		//		},
+		//		"__comment": "Not a 3d Ellipse but essentially a 2d ellipse lengthened in the y-axis",
+		//		"radius": {
+		//			"x": 1.9,
+		//			"y": 1.5,
+		//			"z": 4.6
+		//		}
+		//	}
+		//},
+		"passivephysicsmultibox": {
+			"collisionBoxesByType": {
+				"*": [
+					{
+						"x1": -1.4,
+						"y1": 0,
+						"z1": 0.1,
+						"x2": 1.4,
+						"y2": 1.2,
+						"z2": 2.9
+					},
+					{
+						"x1": -1.4,
+						"y1": 0,
+						"z1": -2.9,
+						"x2": 1.4,
+						"y2": 1.2,
+						"z2": -0.1
+					},
+					{
+						"x1": -1.4,
+						"y1": 0,
+						"z1": -5.9,
+						"x2": 1.4,
+						"y2": 1.2,
+						"z2": -2.9
+					}
+				]
+			},
+			"groundDragFactor": 1,
+			"airDragFallingFactor": 1.0,
+			"gravityFactor": -0.1
+		},
+
+		"creaturecarrier": {
+			"__comment": "Note: The FrontSeat selection box originally had that Y-Rotation of 180 degrees - it offseted the player somehow weirdly. Was not able to figure out why. Setting mountRotation works better.",
+			"seatsByType": {
+				"*": [
+					//{
+					//	"apName": "LeftSeatAP",
+					//	"mountOffset": { "x": 0.5 },
+					//	"bodyYawLimit": 0.4,
+					//	"eyeHeight": 1
+					//},
+					{
+						"apName": "RightSeatAP",
+						"mountOffset": { "x": 0.5 },
+						"bodyYawLimit": 0.4,
+						"controllable": true,
+						"eyeHeight": 1
+					}
+				]
+			}
+		},
+
+
+		"rideableaccessories": {
+			"dropContentsOnDeath": true,
+			"__comment": "These need to be in the same order as the selectionBoxes array further down",
+			"wearableSlotsByType": {
+				"*": [
+					//{
+					//	"code": "LeftSeatAP",
+					//	"forCategoryCodes": []
+					//},
+					//{
+					//	"code": "RightSeatAP",
+					//	"forCategoryCodes": []
+					//}
+					{
+						"code": "RightSeatAP",
+						"forCategoryCodes": [],
+						"attachmentPointCode": "RightSeatAP",
+						"stepParentTo": {
+							"": { "elementName": "RightSeat" }
+						},
+						"emptyInteractPassThrough": true
+					}
+				]
+			}
+		},
+
+
+		"selectionboxes": {
+			"__comment": "Modders, make sure the selectionBoxes are in the same order as the wearableSlots, or things can go haywire. Placed chest contents dont get synced properly for example, if wrongly ordered.",
+			"selectionBoxesByType": {
+				"*": [
+					"RightSeatAP"
+				]
+			}
+		},
+
+
+		"ownable": {
+			"groupCode": "mountableanimal"
+		}
+	},
+
+
+
 
 
 
@@ -225,12 +245,12 @@
 			}
 		},
 		"behaviors": [
-			{
-				"code": "ellipsoidalrepulseagents",
-				"enabledByType": {
-					"*": true
-				}
-			},
+			//{
+			//	"code": "ellipsoidalrepulseagents",
+			//	"enabledByType": {
+			//		"*": true
+			//	}
+			//},
 			{
 				"code": "repulseagents",
 				"enabledByType": {
@@ -257,12 +277,12 @@
 
 	"server": {
 		"behaviors": [
-			{
-				"code": "ellipsoidalrepulseagents",
-				"enabledByType": {
-					"*": true
-				}
-			},
+			//{
+			//	"code": "ellipsoidalrepulseagents",
+			//	"enabledByType": {
+			//		"*": true
+			//	}
+			//},
 			{
 				"code": "repulseagents",
 				"enabledByType": {

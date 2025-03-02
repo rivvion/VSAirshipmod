@@ -34,8 +34,7 @@
   "liquidSelectable": 1,
   "creativeinventory": {
     "general": [ "*" ],
-    "items": [ "*" ],
-    "tools": [ "*" ]
+    "airship": [ "*" ]
   },
   "guiTransform": {
     "translation": {

@@ -23,7 +23,7 @@ namespace VSAirshipmod
 
 
 
-            Mod.Logger.Notification("Hello from template mod: " + api.Side);
+            Mod.Logger.Notification("Hello there from template mod: " + api.Side);
         }
 
         /*public override void StartServerSide(ICoreServerAPI api)

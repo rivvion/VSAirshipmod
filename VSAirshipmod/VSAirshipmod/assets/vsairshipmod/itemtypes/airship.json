@@ -3,7 +3,7 @@
   "class": "ItemBoat",
   "__comment": "Provide here the entity",
   "shapeByType": {
-    "*": { "base": "entities/air/airship" }
+    "*": { "base": "entity/airshipmodel2" }
   },
   "variantgroups": [
     {
@@ -13,14 +13,15 @@
     }
   ],
   "texturesByType": {
-    "*-bamboo": {},
     "*": {
       "material": { "base": "game:block/wood/debarked/{material}" },
       "oak": { "base": "game:block/wood/debarked/{material}" },
       "oak1": { "base": "game:block/wood/planks/{material}*" },
       "birch1": { "base": "game:block/wood/planks/{material}*" },
-      "plainoak": { "base": "game:block/wood/debarked/{material}" }
-
+      "plainoak": { "base": "game:block/wood/debarked/{material}" },
+      "plain": { "base": "game:block/cloth/linen/plain" },
+      "iron1": { "base": "game:block/metal/sheet-plain/iron1" },
+      "rope": { "base": "game:item/resource/rope" }
     }
   },
   "attributes": {

@@ -8,6 +8,9 @@ namespace VSAirshipmod
 {
     public class AirshipLogic
     {
+        //fuel calculation
+        //lift power calculation
+        //damage baloon lift calculation
 
 
     }

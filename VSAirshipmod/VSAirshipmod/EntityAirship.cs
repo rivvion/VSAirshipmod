@@ -25,8 +25,10 @@ namespace VSAirshipmod
         // current turning speed (rad/tick)
         public double AngularVelocity = 0.0;
 
+        //If you read this, hello traveler. The code below is responsible for the crasing of the game.... i'm joking. its just a variable that stores the Horizontal Velocity :)
         public double HorizontalVelocity = 0.0;
 
+        public double AngularVelocityDivider = 10;
 
         ModSystemBoatingSound modsysSounds;
 
@@ -115,7 +117,6 @@ namespace VSAirshipmod
             }
 
             base.OnTesselation(ref entityShape, shapePathForLogging);
-
         }
 
 
@@ -225,8 +226,6 @@ namespace VSAirshipmod
             }*/
         }
 
-        
-
         protected override void updateBoatAngleAndMotion(float dt)
         {
             // Ignore lag spikes
@@ -241,7 +240,7 @@ namespace VSAirshipmod
 
             // Add some easing to it
             ForwardSpeed += (motion.X * SpeedMultiplier - ForwardSpeed) * dt;
-            AngularVelocity += (motion.Z * (SpeedMultiplier/10) - AngularVelocity) * dt;
+            AngularVelocity += (motion.Z * (SpeedMultiplier/ AngularVelocityDivider) - AngularVelocity) * dt;
             HorizontalVelocity = motion.Y;//+= (motion.Y * SpeedMultiplier - HorizontalVelocity) * dt;
 
 
@@ -262,7 +261,7 @@ namespace VSAirshipmod
                 //debug way
                 if (HorizontalVelocity > 0.0)
                 {
-                    pos.Motion.Y = 0.01;
+                    pos.Motion.Y = 0.013;
                 }
 
                 if (HorizontalVelocity == 0.0)
@@ -272,7 +271,7 @@ namespace VSAirshipmod
 
                 if (HorizontalVelocity < 0.0 && !OnGround)
                 {
-                    pos.Motion.Y = -0.01;
+                    pos.Motion.Y = -0.013;
                 }
             }
 
@@ -320,8 +319,6 @@ namespace VSAirshipmod
             if (agent.RightHandItemSlot == null || agent.RightHandItemSlot.Empty) return false;
             return agent.RightHandItemSlot.Itemstack.Collectible.Attributes?.IsTrue("paddlingTool") == true;
         }
-
-        
 
         public virtual Vec3d SeatsToMotion(float dt)
         {
@@ -425,14 +422,10 @@ namespace VSAirshipmod
                     if (isLookingBackwards && requiresPaddlingTool) dir *= -1;
 
                     linearMotion += str * dir * dt * 2f;
-                }
-
-                                
+                }                 
             }
-
             return new Vec3d(linearMotion, horizontalMotion, angularMotion);
         }
-
 
         public override void OnInteract(EntityAgent byEntity, ItemSlot itemslot, Vec3d hitPosition, EnumInteractMode mode)
         {

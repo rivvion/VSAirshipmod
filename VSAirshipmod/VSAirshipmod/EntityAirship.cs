@@ -5,11 +5,7 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
-
-
-using Vintagestory.API.Util;
 using Vintagestory.GameContent;
-using Vintagestory.API.Datastructures;
 
 namespace VSAirshipmod
 {
@@ -37,7 +33,7 @@ namespace VSAirshipmod
         ModSystemBoatingSound modsysSounds;
 
         public override bool ApplyGravity => applyGravity;
-        private bool applyGravity = false;
+        private bool applyGravity = true;
 
         public override bool IsInteractable
         {
@@ -135,7 +131,7 @@ namespace VSAirshipmod
 
             long ellapseMs = capi.InWorldEllapsedMilliseconds;
             float forwardpitch = 0;
-            if(IsFlying)//(Swimming)//
+            if (IsFlying)//(Swimming)//
             {
                 double gamespeed = capi.World.Calendar.SpeedOfTime / 60f;
                 float intensity = 0.15f + GlobalConstants.CurrentWindSpeedClient.X * 0.9f;
@@ -167,17 +163,17 @@ namespace VSAirshipmod
                     Die();
                 }
 
-                ApplyGravityIfNotMounted();
+                //ApplyGravityIfNotMounted();
                 updateBoatAngleAndMotion(dt);
-                
+
             }
 
             base.OnGameTick(dt);
         }
 
-        
 
 
+        //in the future, make gravity alwasy on. this will solve the issue with collinding not detected
         private void ApplyGravityIfNotMounted()
         {
             if (IsEmpty())
@@ -186,7 +182,7 @@ namespace VSAirshipmod
             }
             else
             {
-                applyGravity = false;
+                //applyGravity = false;
             }
         }
 
@@ -237,17 +233,14 @@ namespace VSAirshipmod
             float step = GlobalConstants.PhysicsFrameTime;
             var motion = SeatsToMotion(step);
 
-
-            //if (!IsFlying) return;
-
-
             // Add some easing to it
             ForwardSpeed += (motion.X * SpeedMultiplier - ForwardSpeed) * dt;
-            AngularVelocity += (motion.Z * (SpeedMultiplier/ AngularVelocityDivider) - AngularVelocity) * dt;
+            AngularVelocity += (motion.Z * (SpeedMultiplier / AngularVelocityDivider) - AngularVelocity) * dt;
             HorizontalVelocity = motion.Y * dt;//+= (motion.Y * SpeedMultiplier - HorizontalVelocity) * dt;
 
 
             if (!IsFlying && HorizontalVelocity == 0) return;
+
 
             var pos = SidedPos;
 
@@ -256,23 +249,18 @@ namespace VSAirshipmod
                 var targetmotion = pos.GetViewVector().Mul((float)-ForwardSpeed).ToVec3d();
                 pos.Motion.X = targetmotion.X;
                 pos.Motion.Z = targetmotion.Z;
-                //pos.Motion.Y = targetmotion.Y;
             }
 
             if (true)
             {
-                //debug way
                 if (HorizontalVelocity > 0.0)
                 {
                     pos.Motion.Y = 0.013;
                 }
 
-                if (HorizontalVelocity == 0.0)
-                {
-                    pos.SetPos(pos.X, pos.Y, pos.Z);
-                }
+                applyGravity = IsEmpty() ? true : false;
 
-                if (HorizontalVelocity < 0.0 && !OnGround)
+                if (HorizontalVelocity < 0.0 || (IsEmpty() && (!OnGround || !Swimming)))
                 {
                     pos.Motion.Y = -0.013;
                 }
@@ -410,6 +398,7 @@ namespace VSAirshipmod
 
                 float str = ++seatsRowing == 1 ? 1 : 0.5f;
 
+
                 if (controls.Left || controls.Right)
                 {
                     float dir = controls.Left ? 1 : -1;
@@ -426,7 +415,9 @@ namespace VSAirshipmod
                     if (isLookingBackwards && requiresPaddlingTool) dir *= -1;
 
                     linearMotion += str * dir * dt * 2f;
-                }                 
+                }
+
+
             }
             return new Vec3d(linearMotion, horizontalMotion, angularMotion);
         }

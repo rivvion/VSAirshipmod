@@ -242,8 +242,9 @@ namespace VSAirshipmod
             // Add some easing to it
             ForwardSpeed += (motion.X * SpeedMultiplier - ForwardSpeed) * dt;
             AngularVelocity += (motion.Z * SpeedMultiplier - AngularVelocity) * dt;
-            HorizontalVelocity += (motion.Y * SpeedMultiplier - HorizontalVelocity) * dt;
-            
+            HorizontalVelocity = motion.Y;//+= (motion.Y * SpeedMultiplier - HorizontalVelocity) * dt;
+
+
             if (!IsFlying && HorizontalVelocity == 0) return;
 
             var pos = SidedPos;
@@ -256,13 +257,12 @@ namespace VSAirshipmod
                 //pos.Motion.Y = targetmotion.Y;
             }
 
-            if (!IsEmpty())
+            if (true)
             {
-                
-                //debug
+                //debug way
                 if (HorizontalVelocity > 0.0)
                 {
-                    pos.SetPos(pos.X, pos.Y + 0.01, pos.Z);
+                    pos.Motion.Y = 0.01;
                 }
 
                 if (HorizontalVelocity == 0.0)
@@ -270,17 +270,10 @@ namespace VSAirshipmod
                     pos.SetPos(pos.X, pos.Y, pos.Z);
                 }
 
-                if (HorizontalVelocity < 0.0)
+                if (HorizontalVelocity < 0.0 && !OnGround)
                 {
-                    pos.SetPos(pos.X, pos.Y - 0.01, pos.Z);
+                    pos.Motion.Y = -0.01;
                 }
-                /*if (HorizontalVelocity != 0.0)
-                {
-                    var targetmotion = pos.GetViewVector().Mul((float)-HorizontalVelocity).ToVec3d();
-                    //pos.Motion.X = targetmotion.X;
-                    //pos.Motion.Z = targetmotion.Z;
-                    pos.Motion.Y = targetmotion.Y;
-                }*/
             }
 
 
@@ -384,7 +377,12 @@ namespace VSAirshipmod
                     StartAnimation("turnRight");
                 }
 
+                if (controls.Jump || controls.Sprint)
+                {
+                    float dir = controls.Jump ? 1 : -1;
 
+                    horizontalMotion += dir * dt * 2f;
+                }
 
                 if (!controls.TriesToMove)
                 {
@@ -429,29 +427,7 @@ namespace VSAirshipmod
                     linearMotion += str * dir * dt * 2f;
                 }
 
-                if (!controls.LeftMouseDown && controls.Sprint)
-                {
-                    float dir = 1;
-
-                    var yawdist = Math.Abs(GameMath.AngleRadDistance(SidedPos.Yaw, seat.Passenger.SidedPos.Yaw));
-                    bool isLookingBackwards = yawdist > GameMath.PIHALF;
-
-                    if (isLookingBackwards && requiresPaddlingTool) dir *= -1;
-
-                    horizontalMotion += dir * dt * 2f;
-                }
-
-                if (controls.LeftMouseDown && controls.Sprint)
-                {
-                    float dir = -1;
-
-                    var yawdist = Math.Abs(GameMath.AngleRadDistance(SidedPos.Yaw, seat.Passenger.SidedPos.Yaw));
-                    bool isLookingBackwards = yawdist > GameMath.PIHALF;
-
-                    if (isLookingBackwards && requiresPaddlingTool) dir *= -1;
-
-                    horizontalMotion += dir * dt * 2f;
-                }
+                                
             }
 
             return new Vec3d(linearMotion, horizontalMotion, angularMotion);

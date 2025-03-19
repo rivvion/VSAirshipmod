@@ -25,15 +25,18 @@ namespace VSAirshipmod
         // current turning speed (rad/tick)
         public double AngularVelocity = 0.0;
 
+
+
         //If you read this, hello traveler. The code below is responsible for the crasing of the game.... i'm joking. its just a variable that stores the Horizontal Velocity :)
         public double HorizontalVelocity = 0.0;
+        private bool IsFlying => !OnGround;
+
 
         public double AngularVelocityDivider = 10;
 
         ModSystemBoatingSound modsysSounds;
 
         public override bool ApplyGravity => applyGravity;
-
         private bool applyGravity = false;
 
         public override bool IsInteractable
@@ -172,7 +175,7 @@ namespace VSAirshipmod
             base.OnGameTick(dt);
         }
 
-        private bool IsFlying => !OnGround;
+        
 
 
         private void ApplyGravityIfNotMounted()
@@ -374,6 +377,7 @@ namespace VSAirshipmod
                     StartAnimation("turnRight");
                 }
 
+                //controls altitude (horizontal motion). its before tries to move, becouse tries to move ignores up and down motion and it was not working 
                 if (controls.Jump || controls.Sprint)
                 {
                     float dir = controls.Jump ? 1 : -1;

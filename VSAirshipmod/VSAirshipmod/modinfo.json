@@ -1,13 +1,14 @@
 {
     "type": "code",
     "modid": "vsairshipmod",
-    "name": "VSAirshipmod",
+    "name": "Airshipmod",
     "authors": [
-        "Unknown"
+      "Rivvion",
+        "TygrysT"
     ],
-    "description": "To be added",
-    "version": "0.0.2",
+    "description": "WORK IN POGGERS - DO NOT USE YET",
+    "version": "0.0.1",
     "dependencies": {
-        "game": ""
+        "game": "1.20.4"
     }
 }

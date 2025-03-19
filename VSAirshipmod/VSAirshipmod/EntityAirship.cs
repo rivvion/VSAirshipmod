@@ -241,7 +241,7 @@ namespace VSAirshipmod
             // Add some easing to it
             ForwardSpeed += (motion.X * SpeedMultiplier - ForwardSpeed) * dt;
             AngularVelocity += (motion.Z * (SpeedMultiplier/ AngularVelocityDivider) - AngularVelocity) * dt;
-            HorizontalVelocity = motion.Y;//+= (motion.Y * SpeedMultiplier - HorizontalVelocity) * dt;
+            HorizontalVelocity = motion.Y * dt;//+= (motion.Y * SpeedMultiplier - HorizontalVelocity) * dt;
 
 
             if (!IsFlying && HorizontalVelocity == 0) return;

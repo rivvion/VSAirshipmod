@@ -172,20 +172,6 @@ namespace VSAirshipmod
         }
 
 
-
-        //in the future, make gravity alwasy on. this will solve the issue with collinding not detected
-        private void ApplyGravityIfNotMounted()
-        {
-            if (IsEmpty())
-            {
-                applyGravity = true;
-            }
-            else
-            {
-                //applyGravity = false;
-            }
-        }
-
         public override void OnAsyncParticleTick(float dt, IAsyncParticleManager manager)
         {
             base.OnAsyncParticleTick(dt, manager);
@@ -258,9 +244,9 @@ namespace VSAirshipmod
                     pos.Motion.Y = 0.013;
                 }
 
-                applyGravity = IsEmpty() ? true : false;
+                applyGravity = IsEmptyOfPlayers() ? true : false;
 
-                if (HorizontalVelocity < 0.0 || (IsEmpty() && (!OnGround || !Swimming)))
+                if (HorizontalVelocity < 0.0 || (IsEmptyOfPlayers() && (!OnGround || !Swimming)))
                 {
                     pos.Motion.Y = -0.013;
                 }
@@ -447,6 +433,13 @@ namespace VSAirshipmod
             var bhs = GetBehavior<EntityBehaviorSeatable>();
             var bhr = GetBehavior<EntityBehaviorRideableAccessories>();
             return !bhs.AnyMounted() && (bhr == null || bhr.Inventory.Empty);
+        }
+
+        private bool IsEmptyOfPlayers()
+        {
+            var bhs = GetBehavior<EntityBehaviorSeatable>();
+            //var bhr = GetBehavior<EntityBehaviorRideableAccessories>();
+            return !bhs.AnyMounted();
         }
 
         private bool tryPickup(EntityAgent byEntity, EnumInteractMode mode)

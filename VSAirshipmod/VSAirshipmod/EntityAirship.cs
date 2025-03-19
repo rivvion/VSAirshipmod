@@ -190,7 +190,7 @@ namespace VSAirshipmod
         {
             base.OnAsyncParticleTick(dt, manager);
 
-            double disturbance = Math.Abs(ForwardSpeed) + Math.Abs(AngularVelocity);
+            /*double disturbance = Math.Abs(ForwardSpeed) + Math.Abs(AngularVelocity);
             if (disturbance > 0.01)
             {
                 float minx = -3f;
@@ -222,7 +222,7 @@ namespace VSAirshipmod
 
                     manager.Spawn(SplashParticleProps);
                 }
-            }
+            }*/
         }
 
         
@@ -241,7 +241,7 @@ namespace VSAirshipmod
 
             // Add some easing to it
             ForwardSpeed += (motion.X * SpeedMultiplier - ForwardSpeed) * dt;
-            AngularVelocity += (motion.Z * SpeedMultiplier - AngularVelocity) * dt;
+            AngularVelocity += (motion.Z * (SpeedMultiplier/10) - AngularVelocity) * dt;
             HorizontalVelocity = motion.Y;//+= (motion.Y * SpeedMultiplier - HorizontalVelocity) * dt;
 
 

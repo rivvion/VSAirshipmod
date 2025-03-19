@@ -211,6 +211,7 @@ namespace VSAirshipmod
             }*/
         }
 
+        double horizontalmodifier = 3;
         protected override void updateBoatAngleAndMotion(float dt)
         {
             // Ignore lag spikes
@@ -241,14 +242,14 @@ namespace VSAirshipmod
             {
                 if (HorizontalVelocity > 0.0)
                 {
-                    pos.Motion.Y = 0.013;
+                    pos.Motion.Y = 0.013* horizontalmodifier;
                 }
 
                 applyGravity = IsEmptyOfPlayers() ? true : false;
 
                 if (HorizontalVelocity < 0.0 || (IsEmptyOfPlayers() && (!OnGround || !Swimming)))
                 {
-                    pos.Motion.Y = -0.013;
+                    pos.Motion.Y = -0.013* horizontalmodifier;
                 }
             }
 

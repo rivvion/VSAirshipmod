@@ -69,7 +69,7 @@
 		},
 		"shouldSwivelFromMotion": false,
 		"speedMultiplierByType": {
-			"*": 10.2
+			"*": 1.2
 		},
 		"swimmingOffsetYByType": {
 			"*": 1
@@ -131,8 +131,8 @@
 				]
 			},
 			"groundDragFactor": 1,
-			"airDragFallingFactor": 1.0,
-			"gravityFactor": 0
+			"airDragFallingFactor": 1.0,//1
+			"gravityFactor": 0.1//1
 		},
 
 		"creaturecarrier": {

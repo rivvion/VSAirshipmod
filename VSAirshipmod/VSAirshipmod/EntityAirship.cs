@@ -25,12 +25,14 @@ namespace VSAirshipmod
         // current turning speed (rad/tick)
         public double AngularVelocity = 0.0;
 
+        public double HorizontalVelocity = 0.0;
+
+
         ModSystemBoatingSound modsysSounds;
 
-        public override bool ApplyGravity
-        {
-            get { return true; }
-        }
+        public override bool ApplyGravity => applyGravity;
+
+        private bool applyGravity = false;
 
         public override bool IsInteractable
         {
@@ -129,7 +131,7 @@ namespace VSAirshipmod
 
             long ellapseMs = capi.InWorldEllapsedMilliseconds;
             float forwardpitch = 0;
-            if(true)//(Swimming)//
+            if(IsFlying)//(Swimming)//
             {
                 double gamespeed = capi.World.Calendar.SpeedOfTime / 60f;
                 float intensity = 0.15f + GlobalConstants.CurrentWindSpeedClient.X * 0.9f;
@@ -161,10 +163,27 @@ namespace VSAirshipmod
                     Die();
                 }
 
+                ApplyGravityIfNotMounted();
                 updateBoatAngleAndMotion(dt);
+                
             }
 
             base.OnGameTick(dt);
+        }
+
+        private bool IsFlying => !OnGround;
+
+
+        private void ApplyGravityIfNotMounted()
+        {
+            if (IsEmpty())
+            {
+                applyGravity = true;
+            }
+            else
+            {
+                applyGravity = false;
+            }
         }
 
         public override void OnAsyncParticleTick(float dt, IAsyncParticleManager manager)
@@ -206,6 +225,8 @@ namespace VSAirshipmod
             }
         }
 
+        
+
         protected override void updateBoatAngleAndMotion(float dt)
         {
             // Ignore lag spikes
@@ -214,11 +235,16 @@ namespace VSAirshipmod
             float step = GlobalConstants.PhysicsFrameTime;
             var motion = SeatsToMotion(step);
 
-            //if (!Swimming) return;
+
+            //if (!IsFlying) return;
+
 
             // Add some easing to it
             ForwardSpeed += (motion.X * SpeedMultiplier - ForwardSpeed) * dt;
-            AngularVelocity += (motion.Y * SpeedMultiplier - AngularVelocity) * dt;
+            AngularVelocity += (motion.Z * SpeedMultiplier - AngularVelocity) * dt;
+            HorizontalVelocity += (motion.Y * SpeedMultiplier - HorizontalVelocity) * dt;
+            
+            if (!IsFlying && HorizontalVelocity == 0) return;
 
             var pos = SidedPos;
 
@@ -227,7 +253,36 @@ namespace VSAirshipmod
                 var targetmotion = pos.GetViewVector().Mul((float)-ForwardSpeed).ToVec3d();
                 pos.Motion.X = targetmotion.X;
                 pos.Motion.Z = targetmotion.Z;
+                //pos.Motion.Y = targetmotion.Y;
             }
+
+            if (!IsEmpty())
+            {
+                
+                //debug
+                if (HorizontalVelocity > 0.0)
+                {
+                    pos.SetPos(pos.X, pos.Y + 0.01, pos.Z);
+                }
+
+                if (HorizontalVelocity == 0.0)
+                {
+                    pos.SetPos(pos.X, pos.Y, pos.Z);
+                }
+
+                if (HorizontalVelocity < 0.0)
+                {
+                    pos.SetPos(pos.X, pos.Y - 0.01, pos.Z);
+                }
+                /*if (HorizontalVelocity != 0.0)
+                {
+                    var targetmotion = pos.GetViewVector().Mul((float)-HorizontalVelocity).ToVec3d();
+                    //pos.Motion.X = targetmotion.X;
+                    //pos.Motion.Z = targetmotion.Z;
+                    pos.Motion.Y = targetmotion.Y;
+                }*/
+            }
+
 
             var bh = GetBehavior<EntityBehaviorPassivePhysicsMultiBox>();
             bool canTurn = true;
@@ -273,12 +328,15 @@ namespace VSAirshipmod
             return agent.RightHandItemSlot.Itemstack.Collectible.Attributes?.IsTrue("paddlingTool") == true;
         }
 
-        public virtual Vec2d SeatsToMotion(float dt)
+        
+
+        public virtual Vec3d SeatsToMotion(float dt)
         {
             int seatsRowing = 0;
 
             double linearMotion = 0;
             double angularMotion = 0;
+            double horizontalMotion = 0;
 
             var bh = GetBehavior<EntityBehaviorSeatable>();
             bh.Controller = null;
@@ -370,9 +428,33 @@ namespace VSAirshipmod
 
                     linearMotion += str * dir * dt * 2f;
                 }
+
+                if (!controls.LeftMouseDown && controls.Sprint)
+                {
+                    float dir = 1;
+
+                    var yawdist = Math.Abs(GameMath.AngleRadDistance(SidedPos.Yaw, seat.Passenger.SidedPos.Yaw));
+                    bool isLookingBackwards = yawdist > GameMath.PIHALF;
+
+                    if (isLookingBackwards && requiresPaddlingTool) dir *= -1;
+
+                    horizontalMotion += dir * dt * 2f;
+                }
+
+                if (controls.LeftMouseDown && controls.Sprint)
+                {
+                    float dir = -1;
+
+                    var yawdist = Math.Abs(GameMath.AngleRadDistance(SidedPos.Yaw, seat.Passenger.SidedPos.Yaw));
+                    bool isLookingBackwards = yawdist > GameMath.PIHALF;
+
+                    if (isLookingBackwards && requiresPaddlingTool) dir *= -1;
+
+                    horizontalMotion += dir * dt * 2f;
+                }
             }
 
-            return new Vec2d(linearMotion, angularMotion);
+            return new Vec3d(linearMotion, horizontalMotion, angularMotion);
         }
 
 

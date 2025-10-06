@@ -21,6 +21,7 @@ namespace VSAirshipmod
         // current turning speed (rad/tick)
         public double AngularVelocity = 0.0;
 
+        private ModSystemBoatingSoundAndRatlineStamina vanillaBoatSound;
 
 
         //If you read this, hello traveler. The code below is responsible for the crasing of the game.... i'm joking. its just a variable that stores the Horizontal Velocity :)
